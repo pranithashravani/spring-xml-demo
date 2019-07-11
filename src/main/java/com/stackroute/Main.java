@@ -18,19 +18,18 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        ApplicationContext ac1 = new ClassPathXmlApplicationContext("beans.xml");
-        Movie m = ac1.getBean("movie", Movie.class);
-        m.display();
-        Resource resource = new ClassPathResource("beans.xml");
-        BeanFactory factory = new XmlBeanFactory(resource);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie = applicationContext.getBean("movie", Movie.class);
+        movie.display();
+        System.out.println(movie);
+        Movie movie1 = applicationContext.getBean("movie1", Movie.class);
+        movie1.display();
+        System.out.println(movie1);
+      if(movie==movie1)
+          System.out.println("true");
+      else
+          System.out.println("false");
 
-        Movie m1 = factory.getBean("movie", Movie.class);
-        m1.display();
-        BeanDefinitionRegistry beanFactory=new DefaultListableBeanFactory();
-        XmlBeanDefinitionReader reader=new XmlBeanDefinitionReader(beanFactory);
-        reader.loadBeanDefinitions(new FileSystemResource("/home/pranitha/MavenFirstTask/src/main/resources/beans.xml"));
-        Movie m2=((DefaultListableBeanFactory)beanFactory).getBean(Movie.class);
-        m2.display();
 
     }
 
