@@ -3,19 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <bean name="movie"  class="com.stackroute.firsttask.Movie" >
-            <property name="ac" ref="actor"></property>
-    </bean>
 
+    <beans default-init-method="customInit" default-destroy-method="customDestroy">
 
+        <bean id="demoBean" class="com.stackroute.demo.Beanlifecycledemo"></bean>
 
-<bean id="actor" class="com.stackroute.firsttask.Actor">
-<constructor-arg index="0" value="29"></constructor-arg>
-    <constructor-arg index="1" value="pranitha"></constructor-arg>
-    <constructor-arg index="2" value="female"></constructor-arg>
-</bean>
-
-
+    </beans>
 
 
 
