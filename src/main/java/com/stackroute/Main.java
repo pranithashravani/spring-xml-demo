@@ -21,14 +21,9 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
         Movie movie = applicationContext.getBean("movie", Movie.class);
         movie.display();
-        System.out.println(movie);
-        Movie movie1 = applicationContext.getBean("movie1", Movie.class);
-        movie1.display();
-        System.out.println(movie1);
-      if(movie==movie1)
-          System.out.println("true");
-      else
-          System.out.println("false");
+
+
+
 
 
     }
