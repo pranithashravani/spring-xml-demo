@@ -20,11 +20,8 @@ import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Beanlifecycledemo beanlifecycledemo = context.getBean("demoBean", Beanlifecycledemo.class);
-        beanlifecycledemo.display();
-        System.out.println(beanlifecycledemo);
-        context.close();
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        
 
 
 
